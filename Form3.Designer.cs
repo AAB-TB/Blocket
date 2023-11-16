@@ -43,7 +43,7 @@
             backImagePictureBox = new PictureBox();
             itemDescription = new TextBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtPrice = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -77,6 +77,7 @@
             deleteBtn.TabIndex = 10;
             deleteBtn.Text = "Delete Item";
             deleteBtn.UseVisualStyleBackColor = false;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // pictureBox1
             // 
@@ -133,7 +134,8 @@
             itemTitle.ForeColor = Color.DarkGreen;
             itemTitle.Location = new Point(559, 28);
             itemTitle.Name = "itemTitle";
-            itemTitle.PlaceholderText = "Föremål Namn";
+            itemTitle.PlaceholderText = "Item name";
+            itemTitle.ReadOnly = true;
             itemTitle.Size = new Size(415, 38);
             itemTitle.TabIndex = 16;
             // 
@@ -200,6 +202,7 @@
             itemDescription.Multiline = true;
             itemDescription.Name = "itemDescription";
             itemDescription.PlaceholderText = "Description";
+            itemDescription.ReadOnly = true;
             itemDescription.ScrollBars = ScrollBars.Vertical;
             itemDescription.Size = new Size(502, 450);
             itemDescription.TabIndex = 25;
@@ -215,15 +218,16 @@
             label1.TabIndex = 37;
             label1.Text = "Item Price";
             // 
-            // textBox1
+            // txtPrice
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            textBox1.ForeColor = Color.DarkGreen;
-            textBox1.Location = new Point(773, 642);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Item Price";
-            textBox1.Size = new Size(258, 38);
-            textBox1.TabIndex = 36;
+            txtPrice.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtPrice.ForeColor = Color.DarkGreen;
+            txtPrice.Location = new Point(773, 642);
+            txtPrice.Name = "txtPrice";
+            txtPrice.PlaceholderText = "Item Price";
+            txtPrice.ReadOnly = true;
+            txtPrice.Size = new Size(258, 38);
+            txtPrice.TabIndex = 36;
             // 
             // Form3
             // 
@@ -231,13 +235,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1314, 724);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtPrice);
             Controls.Add(itemDescription);
             Controls.Add(tabControl1);
             Controls.Add(itemTitle);
             Controls.Add(panel1);
+            MaximizeBox = false;
             Name = "Form3";
-            Text = "Form3";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
@@ -266,5 +270,6 @@
         private TextBox itemDescription;
         private Label label1;
         private TextBox textBox1;
+        private TextBox txtPrice;
     }
 }

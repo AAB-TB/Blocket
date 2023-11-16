@@ -35,12 +35,15 @@
             // 
             // itemImage
             // 
+            itemImage.BackgroundImageLayout = ImageLayout.Stretch;
             itemImage.BorderStyle = BorderStyle.Fixed3D;
             itemImage.Location = new Point(17, 17);
             itemImage.Name = "itemImage";
             itemImage.Size = new Size(190, 194);
+            itemImage.SizeMode = PictureBoxSizeMode.StretchImage;
             itemImage.TabIndex = 0;
             itemImage.TabStop = false;
+            itemImage.Click += itemImage_Click;
             // 
             // itemName
             // 
@@ -52,15 +55,17 @@
             itemName.Size = new Size(79, 31);
             itemName.TabIndex = 2;
             itemName.Text = "label2";
+            itemName.Click += itemName_Click;
             // 
             // ItemUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.Fixed3D;
             Controls.Add(itemName);
             Controls.Add(itemImage);
             Name = "ItemUserControl";
-            Size = new Size(226, 261);
+            Size = new Size(222, 257);
             ((System.ComponentModel.ISupportInitialize)itemImage).EndInit();
             ResumeLayout(false);
             PerformLayout();

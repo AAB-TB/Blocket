@@ -44,11 +44,12 @@
             descriptionTextBox = new TextBox();
             categoryComboBox = new ComboBox();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtPrice = new TextBox();
             label3 = new Label();
             txtItemName = new TextBox();
             nycategoriSave = new Button();
             nycategorytxtbox = new TextBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
@@ -95,6 +96,7 @@
             updateBtn.TabIndex = 7;
             updateBtn.Text = "Update";
             updateBtn.UseVisualStyleBackColor = false;
+            updateBtn.Click += updateBtn_Click;
             // 
             // addBtn
             // 
@@ -107,6 +109,7 @@
             addBtn.TabIndex = 6;
             addBtn.Text = "Save New Item";
             addBtn.UseVisualStyleBackColor = false;
+            addBtn.Click += addBtn_Click;
             // 
             // hmeBtn
             // 
@@ -163,6 +166,7 @@
             frontImagePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             frontImagePictureBox.TabIndex = 20;
             frontImagePictureBox.TabStop = false;
+            frontImagePictureBox.Click += frontImagePictureBox_Click;
             // 
             // tabPage2
             // 
@@ -185,6 +189,7 @@
             backImagePictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             backImagePictureBox.TabIndex = 21;
             backImagePictureBox.TabStop = false;
+            backImagePictureBox.Click += backImagePictureBox_Click;
             // 
             // label4
             // 
@@ -218,7 +223,6 @@
             categoryComboBox.Name = "categoryComboBox";
             categoryComboBox.Size = new Size(258, 39);
             categoryComboBox.TabIndex = 36;
-            categoryComboBox.Text = "Category";
             // 
             // label1
             // 
@@ -231,15 +235,15 @@
             label1.TabIndex = 35;
             label1.Text = "Item Price";
             // 
-            // textBox1
+            // txtPrice
             // 
-            textBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            textBox1.ForeColor = Color.DarkGreen;
-            textBox1.Location = new Point(985, 126);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Item Price";
-            textBox1.Size = new Size(258, 38);
-            textBox1.TabIndex = 34;
+            txtPrice.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            txtPrice.ForeColor = Color.DarkGreen;
+            txtPrice.Location = new Point(985, 126);
+            txtPrice.Name = "txtPrice";
+            txtPrice.PlaceholderText = "Item Price";
+            txtPrice.Size = new Size(258, 38);
+            txtPrice.TabIndex = 34;
             // 
             // label3
             // 
@@ -273,6 +277,7 @@
             nycategoriSave.TabIndex = 38;
             nycategoriSave.Text = "Save";
             nycategoriSave.UseVisualStyleBackColor = false;
+            nycategoriSave.Click += nycategoriSave_Click;
             // 
             // nycategorytxtbox
             // 
@@ -280,29 +285,40 @@
             nycategorytxtbox.ForeColor = Color.DarkGreen;
             nycategorytxtbox.Location = new Point(787, 308);
             nycategorytxtbox.Name = "nycategorytxtbox";
-            nycategorytxtbox.PlaceholderText = "Lägg till Ny kategori";
+            nycategorytxtbox.PlaceholderText = "Add New Category";
             nycategorytxtbox.Size = new Size(258, 38);
             nycategorytxtbox.TabIndex = 37;
-            nycategorytxtbox.Text = "Add New Category";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            label2.ForeColor = Color.DarkGreen;
+            label2.Location = new Point(797, 196);
+            label2.Name = "label2";
+            label2.Size = new Size(111, 31);
+            label2.TabIndex = 39;
+            label2.Text = "Category";
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1314, 724);
+            Controls.Add(label2);
             Controls.Add(nycategoriSave);
             Controls.Add(nycategorytxtbox);
             Controls.Add(categoryComboBox);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtPrice);
             Controls.Add(label3);
             Controls.Add(txtItemName);
             Controls.Add(label4);
             Controls.Add(descriptionTextBox);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
+            MaximizeBox = false;
             Name = "Form2";
-            Text = "Form2";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
@@ -331,10 +347,11 @@
         private TextBox descriptionTextBox;
         private ComboBox categoryComboBox;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtPrice;
         private Label label3;
         private TextBox txtItemName;
         private Button nycategoriSave;
         private TextBox nycategorytxtbox;
+        private Label label2;
     }
 }

@@ -107,7 +107,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.ForeColor = Color.OrangeRed;
+            label1.ForeColor = Color.Navy;
             label1.Location = new Point(633, 29);
             label1.Name = "label1";
             label1.Size = new Size(249, 41);
@@ -126,6 +126,7 @@
             suggestionsListBox.Size = new Size(863, 78);
             suggestionsListBox.TabIndex = 5;
             suggestionsListBox.Visible = false;
+            suggestionsListBox.SelectedIndexChanged += suggestionsListBox_SelectedIndexChanged;
             // 
             // searchtextbox
             // 
@@ -136,6 +137,7 @@
             searchtextbox.PlaceholderText = "Search By Category or Item Name";
             searchtextbox.Size = new Size(863, 47);
             searchtextbox.TabIndex = 4;
+            searchtextbox.TextChanged += searchtextbox_TextChanged;
             // 
             // flowLayoutPanel1
             // 
@@ -155,6 +157,7 @@
             Controls.Add(searchtextbox);
             Controls.Add(label1);
             Controls.Add(panel1);
+            MaximizeBox = false;
             Name = "Form1";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
