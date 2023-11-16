@@ -214,7 +214,7 @@ namespace Blocket
 
             return searchResults;
         }
-        public async void DeleteAdvertisement(int? adID)
+        public async Task DeleteAdvertisement(int? adID)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
