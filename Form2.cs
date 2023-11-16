@@ -19,7 +19,7 @@ namespace Blocket
         private OpenFileDialog backImageOpenFileDialog = new OpenFileDialog();
         string frontImagefilePath;
         string backImagefilePath;
-
+        
 
         private int selectedItem;
 
@@ -220,8 +220,6 @@ namespace Blocket
                 MessageBox.Show("Please enter a description.");
                 return false;
             }
-
-
 
             return true;
         }
