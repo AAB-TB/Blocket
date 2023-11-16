@@ -1,16 +1,14 @@
 CREATE TABLE Categories (
-    CategoryID INT PRIMARY KEY,
-    CategoryName VARCHAR(50) NOT NULL
+    CategoryID INT PRIMARY KEY IDENTITY(1,1),
+    CategoryName VARCHAR(50) NOT NULL UNIQUE
 );
-
-
 CREATE TABLE Ads (
-    AdID INT PRIMARY KEY,
+    AdID INT PRIMARY KEY IDENTITY(1,1),
     Title VARCHAR(100) NOT NULL,
-    Description TEXT,
+    Description TEXT NOT NULL,
     Price DECIMAL(10, 2) NOT NULL,
     CategoryID INT,
-    FrontImagePath NVARCHAR(500), 
+    FrontImagePath NVARCHAR(255), -- Nullable
+    SecondImagePath NVARCHAR(255), -- Nullable
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );
-

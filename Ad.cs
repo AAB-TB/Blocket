@@ -8,12 +8,16 @@ namespace Blocket
 {
     public class Ad
     {
+        
         public int AdID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int CategoryID { get; set; }
-        public string FrontImagePath { get; set; }
+        public string? FrontImagePath { get; set; } // Nullable
+        public string? SecondImagePath { get; set; } // Nullable
         public Category Category { get; set; }
+        
+
     }
 }
